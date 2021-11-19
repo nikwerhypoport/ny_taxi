@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "==21.9b0"
+py4j = "==0.10.7"
+pyspark = "==2.4.3"
+pyspark-stubs = "==2.4.0"
+pytest = "==6.2.5"
+pytest-mock = "==3.6.1"
+pytest-runner = "==5.3.1"
+
+[packages]
+
+
+[requires]
+python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
+
+
+[scripts]
+lint = "pipenv run black . --check"
+"lint:fix" = "pipenv run black ."
