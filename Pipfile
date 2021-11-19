@@ -25,5 +25,6 @@ allow_prereleases = true
 
 
 [scripts]
+preprocess = "python etl/preprocessor.py"
 lint = "pipenv run black . --check"
 "lint:fix" = "pipenv run black ."
