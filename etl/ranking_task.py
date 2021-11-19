@@ -45,7 +45,9 @@ def _transform(source_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def run():
-    df: pd.DataFrame = extract(DATA_DIR, "enriched_trip_data.parquet", SourceFormat.PARQUET)
+    df: pd.DataFrame = extract(
+        DATA_DIR, "enriched_trip_data.parquet", SourceFormat.PARQUET
+    )
     df = _transform(df)
     load(df, f"{DATA_DIR}/ranked_by_month_and_pu_zone.parquet")
 
