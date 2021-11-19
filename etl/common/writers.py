@@ -1,4 +1,5 @@
 import pandas as pd
+from loguru import logger
 
 
 def load(df: pd.DataFrame, target_file_name: str) -> None:
@@ -10,5 +11,5 @@ def load(df: pd.DataFrame, target_file_name: str) -> None:
     :param target_file_name:
     :return:
     """
+    logger.info(f"Writing {len(df.index)} rows to {target_file_name}")
     df.to_parquet(target_file_name)
-

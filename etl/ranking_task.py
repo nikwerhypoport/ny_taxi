@@ -49,7 +49,7 @@ def run():
         DATA_DIR, "enriched_trip_data.parquet", SourceFormat.PARQUET
     )
     df = _transform(df)
-    load(df, f"{DATA_DIR}/ranked_by_month_and_pu_zone.parquet")
+    load(df, f"{DATA_DIR}ranked_by_month_and_pu_zone.parquet")
 
 
 if __name__ == "__main__":

@@ -127,5 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/resources/data/*tripdata_*.csv
-/resources/data/*.parquet
+/resources/**/*tripdata_*.csv
+/resources/**/*.parquet

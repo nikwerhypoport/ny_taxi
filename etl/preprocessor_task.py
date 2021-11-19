@@ -81,7 +81,7 @@ def run() -> None:
     lookup_df = extract(DATA_DIR, "taxi+_zone_lookup.csv", SourceFormat.CSV)
     df: pd.DataFrame = extract(DATA_DIR, "*tripdata*.csv", SourceFormat.CSV)
     df = _transform(df, lookup_df)
-    load(df, f"{DATA_DIR}/enriched_trip_data.parquet")
+    load(df, f"{DATA_DIR}enriched_trip_data.parquet")
 
 
 if __name__ == "__main__":

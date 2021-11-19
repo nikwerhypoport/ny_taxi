@@ -25,7 +25,9 @@ Small scripts which represent different parts of a DAG
 - in the shell, run `pipenv run ranking` 
 
 ## notebook
-Used for modelling code for different DAG Tasks under [notebooks](notebooks).
+under [notebooks](notebooks):
+- used for modelling DAG task logic (*modeling.ipynb)
+- used for query examples (*sample_queries.ipynb)
 - `pipenv shell`
 - in pipenv shell run `jupyter-notebook`
 
@@ -34,6 +36,7 @@ Used for modelling code for different DAG Tasks under [notebooks](notebooks).
 - tasks would operate rather on spark dataframes then on pandas dataframes (or would do the enrichment via sql statements)
 - there would be a professional orchestrator like Airflow
 - tasks would be deployed in a Docker Env 
+- if use files in prod system, we would store it in a zipped format
 
 
 
