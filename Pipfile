@@ -12,6 +12,7 @@ pytest-runner = "==5.3.1"
 pandas = "*"
 pyarrow = "*"
 jupyter = "*"
+pandassql = "*"
 
 [requires]
 python_version = "3.8"

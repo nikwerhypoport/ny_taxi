@@ -24,6 +24,7 @@ def preprocess(lookup_table: pd.DataFrame) -> None:
 
 
 def _transform(df: pd.DataFrame, lookup_table: pd.DataFrame) -> pd.DataFrame:
+    enriched_df = df.dropna(subset=COLUMNS_OF_INTEREST)
     enriched_df: pd.DataFrame = _drop_cols(df=df, cols_to_keep=COLUMNS_OF_INTEREST)
     enriched_df = _enrich_locations(enriched_df, lookup_table)
     enriched_df = _extract_year_month(enriched_df)
