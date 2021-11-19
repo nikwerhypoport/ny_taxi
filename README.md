@@ -30,7 +30,7 @@ Used for modelling code for different DAG Tasks under [notebooks](notebooks).
 - in pipenv shell run `jupyter-notebook`
 
 # caveats/not done in this approach:
-- tasks would read and write on True SQL DBS or Spark Data Stores than on local files
+- tasks would rather read and write on true SQL DBS or Spark Data Stores than on local files
 - tasks would operate rather on spark dataframes then on pandas dataframes (or would do the enrichment via sql statements)
 - there would be a professional orchestrator like Airflow
 - tasks would be deployed in a Docker Env 
