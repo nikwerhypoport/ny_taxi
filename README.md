@@ -14,5 +14,7 @@ Small script for reducing size of data and enriching necessary columns for the n
 
 ## notebook
 - just for testing 
+- `pipenv shell`
+- in pipenv shell run `jupyter-notebook`
 
 
