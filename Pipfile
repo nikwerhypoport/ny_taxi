@@ -7,12 +7,13 @@ black = "==21.9b0"
 pytest = "==6.2.5"
 pytest-mock = "==3.6.1"
 pytest-runner = "==5.3.1"
+jupyter = "*"
 
 [packages]
 pandas = "*"
 pyarrow = "*"
-jupyter = "*"
-pandassql = "*"
+pandasql = "*"
+loguru = "*"
 
 [requires]
 python_version = "3.8"
@@ -20,8 +21,9 @@ python_version = "3.8"
 [pipenv]
 allow_prereleases = true
 
-
 [scripts]
-preprocess = "python etl/preprocessor.py"
+preprocess = "python etl/preprocessor_task.py"
+ranking = "python etl/ranking_task.py"
+
 lint = "pipenv run black . --check"
 "lint:fix" = "pipenv run black ."
