@@ -12,6 +12,7 @@ COLUMNS_OF_INTEREST = {
     "DOLocationID",
 }
 
+# TODO: needs to be parameterized in a prod env
 DATA_DIR = "resources/data/"
 
 def preprocess(lookup_table: pd.DataFrame) -> None:
