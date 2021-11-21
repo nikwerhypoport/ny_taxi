@@ -10,6 +10,7 @@ from etl.preprocessor_task import _get_columns_to_drop
     [
         ({"a", "b", "c", "d"}, {"b", "c"}, {"a", "d"}),
         ({"a", "d", "j"}, {"b", "c"}, {"a", "d", "j"}),
+        ({"b", "c"}, {"b", "c"}, set()),
         ({"b", "c"}, {"b", "c", "not_in_all_columns"}, set()),
     ],
 )
