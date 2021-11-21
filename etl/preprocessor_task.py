@@ -2,8 +2,8 @@ from typing import Set
 
 import pandas as pd
 
-from common.readers import extract, SourceFormat
-from common.writers import load
+from etl.common.readers import extract, SourceFormat
+from etl.common.writers import load
 
 COLUMNS_OF_INTEREST = {
     "tpep_pickup_datetime",
@@ -28,7 +28,7 @@ def _transform(df: pd.DataFrame, lookup_table: pd.DataFrame) -> pd.DataFrame:
 def _extract_year_month(df: pd.DataFrame) -> pd.DataFrame:
     repl = lambda m: f"{m.group(1)}-{m.group(2)}"
     df["month"] = df["tpep_dropoff_datetime"].str.replace(
-        "^(\d+)-(\d+).*", repl, regex=True
+        r"^(\d+)-(\d+).*", repl, regex=True
     )
     return df
 
@@ -73,7 +73,7 @@ def _drop_cols(df: pd.DataFrame, cols_to_keep: Set) -> pd.DataFrame:
 
 
 def _get_columns_to_drop(columns: Set, cols_to_keep: Set) -> Set:
-    diff = cols_to_keep.symmetric_difference(columns)
+    diff = columns.difference(cols_to_keep) #cols_to_keep.difference(columns)
     return diff
 
 

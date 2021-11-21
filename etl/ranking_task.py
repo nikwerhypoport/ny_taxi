@@ -1,8 +1,8 @@
 import pandas as pd
 from pandasql import sqldf
 
-from common.readers import extract, SourceFormat
-from common.writers import load
+from etl.common.readers import extract, SourceFormat
+from etl.common.writers import load
 
 DATA_DIR = "resources/data/"
 

@@ -22,8 +22,10 @@ python_version = "3.8"
 allow_prereleases = true
 
 [scripts]
-preprocess = "python etl/preprocessor_task.py"
-ranking = "python etl/ranking_task.py"
+preprocess = "python -m etl.preprocessor_task"
+ranking = "python -m etl.ranking_task"
+test = "pipenv run pytest . -m 'not integration' --ignore-glob='*integration.py' --ignore-glob='*utils*' --ignore-glob='*manually*' --ignore-glob='*TEMPLATE*' --junitxml=./TEST-results-lambdas.xml"
+
 
 lint = "pipenv run black . --check"
 "lint:fix" = "pipenv run black ."
