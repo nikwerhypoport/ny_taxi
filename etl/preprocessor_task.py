@@ -73,7 +73,7 @@ def _drop_cols(df: pd.DataFrame, cols_to_keep: Set) -> pd.DataFrame:
 
 
 def _get_columns_to_drop(columns: Set, cols_to_keep: Set) -> Set:
-    diff = columns.difference(cols_to_keep) #cols_to_keep.difference(columns)
+    diff = columns.difference(cols_to_keep)  # cols_to_keep.difference(columns)
     return diff
 
 

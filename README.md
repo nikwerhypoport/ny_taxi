@@ -18,11 +18,11 @@ Small scripts which represent different parts of a DAG
 
 #### run preprocessor
 - `pipenv shell`
-- in the shell, run `pipenv run preprocess` 
+- in the shell, run `pipenv run task:preprocess` 
 
 #### run ranker
 - `pipenv shell`
-- in the shell, run `pipenv run ranking` 
+- in the shell, run `pipenv run task:ranking` 
 
 ## notebook
 under [notebooks](notebooks):
@@ -30,6 +30,11 @@ under [notebooks](notebooks):
 - used for query examples (*sample_queries.ipynb)
 - `pipenv shell`
 - in pipenv shell run `jupyter-notebook`
+
+## ci
+- `pipenv run ci:lint` --> search for code to lint
+- `pipenv run ci:lint:ci` --> actually lint code
+- `pipenv run ci:test` --> unittests (no integration tests)
 
 # caveats/not done in this approach:
 - tasks would rather read and write on true SQL DBS or Spark Data Stores than on local files
