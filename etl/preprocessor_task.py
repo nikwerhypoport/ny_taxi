@@ -14,10 +14,12 @@ COLUMNS_OF_INTEREST = {
 }
 
 # TODO: needs to be parameterized in a prod env
-DATA_DIR = "resources/data/"
+DATA_DIR = "resources/data/2021/11"
 
 
 def _transform(df: pd.DataFrame, lookup_table: pd.DataFrame) -> pd.DataFrame:
+    df_2 = df_1[COLUMNS_OF_INTEREST].copy(deep=True)
+
     enriched_df: pd.DataFrame = _drop_cols(df=df, cols_to_keep=COLUMNS_OF_INTEREST)
     enriched_df = enriched_df.dropna()
     enriched_df = _enrich_locations(enriched_df, lookup_table)
@@ -34,6 +36,7 @@ def _extract_year_month(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _enrich_locations(df: pd.DataFrame, lookup_table: pd.DataFrame) -> pd.DataFrame:
+
     enriched_df = _enrich_pickup_location(df, lookup_table)
     enriched_df = _enrich_drop_off_location(enriched_df, lookup_table)
     enriched_df = enriched_df.drop(columns=["LocationID_y", "LocationID_x"], axis=1)

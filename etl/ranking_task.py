@@ -13,6 +13,8 @@ def _grouping(source_df: pd.DataFrame) -> pd.DataFrame:
     :param source_df:
     :return:
     """
+
+    # TODO: refactor
     query = """
                     SELECT sum(passenger_count) as count, 
                            pickup_zone, 
@@ -36,7 +38,6 @@ def _ranking(source_df: pd.DataFrame) -> pd.DataFrame:
     )
     ranked = source_df[source_df["rank"] <= 50.0]
     return ranked
-
 
 def _transform(source_df: pd.DataFrame) -> pd.DataFrame:
     grouped_df = _grouping(source_df)
@@ -62,3 +63,6 @@ if __name__ == "__main__":
     step in an Airflow DAG.
     """
     run()
+
+
+    test()
