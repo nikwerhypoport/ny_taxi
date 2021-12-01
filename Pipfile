@@ -7,11 +7,13 @@ black = "==21.9b0"
 pytest = "==6.2.5"
 pytest-mock = "==3.6.1"
 pytest-runner = "==5.3.1"
+jupyter = "*"
 
 [packages]
 pandas = "*"
 pyarrow = "*"
-jupyter = "*"
+pandasql = "*"
+loguru = "*"
 
 [requires]
 python_version = "3.8"
@@ -19,8 +21,11 @@ python_version = "3.8"
 [pipenv]
 allow_prereleases = true
 
-
 [scripts]
-preprocess = "python etl/preprocessor.py"
-lint = "pipenv run black . --check"
-"lint:fix" = "pipenv run black ."
+# TASKS
+"task:preprocess" = "python -m etl.preprocessor_task"
+"task:ranking" = "python -m etl.ranking_task"
+# CI
+"ci:test" = "pipenv run pytest . -m 'not integration' --ignore-glob='*integration.py' --ignore-glob='*utils*' --ignore-glob='*manually*' --ignore-glob='*TEMPLATE*' --junitxml=./TEST-results-lambdas.xml"
+"ci:lint" = "pipenv run black . --check"
+"ci:lint:fix" = "pipenv run black ."
