@@ -39,9 +39,10 @@ under [notebooks](notebooks):
 # caveats/not done in this approach:
 - tasks would rather read and write on true SQL DBS or Spark Data Stores than on local files
 - tasks would operate rather on spark dataframes then on pandas dataframes (or would do the enrichment via sql statements)
-- there would be a professional orchestrator like Airflow
-- tasks would be deployed in a Docker Env 
-- if use files in prod system, we would store it in a zipped format
+- data quality steps should be introduced as extra tasks before and after each core etl
+- orchestrator like Airflow is needed to coordinate tasks
+- tasks would be deployed in a docker environment (k8s, AWS Batch/EC2 or similar)
+- if using files in prod system, we would store it in a zipped format
 
 
 
